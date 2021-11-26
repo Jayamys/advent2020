@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-console.log("\n\n");
+
 function getData(fileLocation = "./input.txt") {
     try {
         return fs.readFileSync(fileLocation, 'utf8')
@@ -9,6 +9,8 @@ function getData(fileLocation = "./input.txt") {
     }
 }
 let data = getData();
+
+console.log("\n\n");
 
 data = data.split('\n')
 for (let x = 0; x < data.length;x++) {
