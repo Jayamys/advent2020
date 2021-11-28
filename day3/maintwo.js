@@ -8,7 +8,7 @@ function getData(fileLocation = "./input.txt") {
     }
 }
 
-let data = getData();
+const data = getData();
 
 for (let y = 0; y < data.length;y++) {
     data[y] = data[y].split("")
@@ -16,26 +16,36 @@ for (let y = 0; y < data.length;y++) {
 
 // console.log(data)
 
-let row = 0;
-let col = 0;
-let totalCount = 0;
-let height = data.length;
-let width = data[0].length;
-console.log(width)
-do {
-    // console.log(data[row][col])
-    if (data[row][col] == "#") {
-        totalCount++
-        data[row][col] = "X"
-    } else {
-        data[row][col] = "O"
-    }
-    row += 1
-    col+= 3
-    if (col >= width){
-        col = col-width
-    }
-    console.log(col)
-} while(row <height)
+function slopeCount(dataSet, rowShift, colShift) {
+    let row = 0;
+    let col = 0;
+    let totalCount = 0;
+    let height = dataSet.length;
+    let width = dataSet[0].length;
+    // console.log(width)
+    do {
+        // console.log(dataSet[row][col])
+        if (dataSet[row][col] == "#") {
+            totalCount++
+            // dataSet[row][col] = "X"
+        } else {
+            // dataSet[row][col] = "O"
+        }
+        row += rowShift;
+        col+= colShift;
+        if (col >= width){
+            col = col-width
+        }
+        
+    } while(row <height)
+    console.log(totalCount)
+    return totalCount
+}
 
-console.log(totalCount)
+let slopeOne = slopeCount([...data], 1,1)
+let slopeTwo = slopeCount([...data], 1,3)
+let slopeThree = slopeCount([...data], 1,5)
+let slopeFour = slopeCount([...data], 1,7)
+let slopeFive = slopeCount([...data], 2,1)
+
+console.log(slopeOne * slopeTwo * slopeThree * slopeFour * slopeFive)
