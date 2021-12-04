@@ -1,0 +1,30 @@
+data = [
+{   'ecl': 'amb',
+    'byr': 1955,
+    'iyr': 2013,
+    'hcl': '#888785',
+    'cid': 265,
+    'eyr': 2026,
+    'hgt': '190cm',
+    'pid': 311393763,
+    'keys': [ 'ecl', 'byr', 'iyr', 'hcl', 'cid', 'eyr', 'hgt', 'pid' ] },
+  { 'eyr': 2026,
+    'iyr': 2019,
+    'pid': 721355771,
+    'byr': 1947,
+    'hcl': '#733820',
+    'hgt': '71in',
+    'ecl': 'gry',
+    'keys': [ 'eyr', 'iyr', 'pid', 'byr', 'hcl', 'hgt', 'ecl' ] },
+  { 'cid': 94,
+    'eyr': 2024,
+    'byr': 1938,
+    'pid': 336868233,
+    'ecl': 'hzl',
+    'iyr': 2012,
+    'hgt': '177cm',
+    'hcl': '#7d3b0c',
+    'keys': [ 'cid', 'eyr', 'byr', 'pid', 'ecl', 'iyr', 'hgt', 'hcl' ] }
+]
+
+console.log(data[0])
